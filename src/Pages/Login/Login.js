@@ -45,7 +45,6 @@ const Login = () => {
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
-                console.log(result.user);
                 const user = result.user;
                 if (user.uid) {
                     toast.success("Login Successful With Google...")
