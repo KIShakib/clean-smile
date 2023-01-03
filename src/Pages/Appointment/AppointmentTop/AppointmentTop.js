@@ -1,8 +1,10 @@
+import Lottie from 'lottie-react'
 import heroImage from "../../../assets/images/chair.png"
 import heroBg from "../../../assets/images/bg.png"
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import 'react-day-picker/dist/style.css';
+import doctorCare from "../../../assets/48627-doctor.json";
 
 const AppointmentTop = ({ selectedDate, setSelectedDate }) => {
 
@@ -17,7 +19,8 @@ const AppointmentTop = ({ selectedDate, setSelectedDate }) => {
             </div>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse lg:px-10 lg:gap-x-40">
-                    <img src={heroImage} className=" shadow-2xl w-full h-96" alt="Chair For Patients" />
+                    {/* <img src={heroImage} className=" shadow-2xl w-full h-96" alt="Chair For Patients" /> */}
+                    <Lottie animationData={doctorCare} loop={true} />
                     <div className='w-full bg-neutral text-white p-6 rounded'>
                         <DayPicker
                             mode="single"

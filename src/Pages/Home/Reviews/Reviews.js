@@ -4,8 +4,10 @@ import people2 from "../../../assets/images/people2.png";
 import people3 from "../../../assets/images/people3.png"
 import Review from './Review';
 import quotation from "../../../assets/icons/quote.svg"
+import useDynamicTitle from '../../../Hooks/useDynamicTitle';
 
 const Reviews = () => {
+    useDynamicTitle("Reviews");
     const reviews = [
         {
             _id: 1,

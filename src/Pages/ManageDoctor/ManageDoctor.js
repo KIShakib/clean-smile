@@ -1,11 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 import ConfirmationModal from '../../Shared/Modal/ConfirmationModal';
 import Spinner from '../../Shared/Spinner/Spinner';
 import Doctor from '../Doctor/Doctor';
 
 const ManageDoctor = () => {
+    useDynamicTitle("Manage-Doctor  Admin")
+
+
     const [deletingDoctor, setDeletingDoctor] = useState(null);
     const { data: doctors = [], isLoading, refetch } = useQuery({
         queryKey: ["doctors"],

@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import toast from "react-hot-toast"
 import { FaGoogle, FaUser } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 
 const User = () => {
     const { user, theme, logOutUser } = useContext(AuthContext);
+    useDynamicTitle("User-Profile");
 
     const handleLogOutUser = () => {
         logOutUser()

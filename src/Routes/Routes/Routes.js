@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashBoardLayout from "../../Layouts/DashBoard/DashBoardLayout";
 import MainLayout from "../../Layouts/MainLayout/MainLayout";
+import AboutUs from "../../Pages/AboutUs/AboutUs";
 import AddDoctor from "../../Pages/AddDoctor/AddDoctor";
 import AllUsers from "../../Pages/AllUsers/AllUsers";
 import Appointment from "../../Pages/Appointment/Appointment/Appointment";
 import DashBoardPage from "../../Pages/DashBoardPage/DashBoardPage";
+import ContactUs from "../../Pages/Home/ContactUs/ContactUs";
 import Home from "../../Pages/Home/Home";
+import Reviews from "../../Pages/Home/Reviews/Reviews";
 import Login from "../../Pages/Login/Login";
 import ManageDoctor from "../../Pages/ManageDoctor/ManageDoctor";
 import MyAppointment from "../../Pages/MyAppointment/MyAppointment";
@@ -25,8 +28,8 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: "appointment",
-                element: <Appointment></Appointment>
+                path: "/appointment",
+                element: <PrivateRoute><Appointment></Appointment></PrivateRoute>
             },
             {
                 path: "/login",
@@ -35,6 +38,18 @@ export const router = createBrowserRouter([
             {
                 path: "/signup",
                 element: <SignUp></SignUp>
+            },
+            {
+                path: "/about-us",
+                element: <AboutUs />
+            },
+            {
+                path: "/reviews",
+                element: <Reviews />
+            },
+            {
+                path: "/contact-us",
+                element: <ContactUs />
             },
             {
                 path: "/user",

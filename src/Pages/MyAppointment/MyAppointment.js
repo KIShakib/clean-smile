@@ -3,11 +3,13 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 import Spinner from '../../Shared/Spinner/Spinner';
 import MySingleAppointment from '../MySingleAppointment/MySingleAppointment';
 
 const MyAppointment = () => {
     const { user } = useContext(AuthContext);
+    useDynamicTitle("My-Appointment");
 
     const { data: myAppointment = [], isLoading, refetch } = useQuery({
         queryKey: ["myappointments", user?.email],

@@ -3,9 +3,13 @@ import { data } from 'autoprefixer';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 import SmallSpinner from '../../Shared/SmallSpinner/SmallSpinner';
 
 const AddDoctor = () => {
+    useDynamicTitle("Add-Doctor   Admin")
+
+
     const [loading, setLoading] = useState(false);
     const imgbbKey = process.env.REACT_APP_imgbb_api_key;
     const { data: appointmentName = [], isLoading, refetch } = useQuery({

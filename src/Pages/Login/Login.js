@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 import useToken from '../../Hooks/useToken';
 import SmallSpinner from '../../Shared/SmallSpinner/SmallSpinner';
 
@@ -12,6 +13,7 @@ const Login = () => {
     const { signInWithGoogle, loginUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    useDynamicTitle("Login");
 
 
     const from = location.state?.from?.pathname || "/user";
@@ -59,7 +61,8 @@ const Login = () => {
     return (
         <div className="hero min-h-screen text-neutral">
             <div className="card w-full max-w-sm shadow-2xl bg-base-100 rounded">
-                <div className="card-body">
+                <div className="card-body font-semibold">
+                    <h2 className='text-center text-2xl font-bold'>Login</h2>
                     <form onSubmit={handleLogin}>
                         <div className="form-control">
                             <label className="label">
@@ -77,22 +80,22 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button type='submit' className="btn btn-neutral">{
+                            <button type='submit' className="btn btn-outline rounded-sm border hover:border-none hover:text-slate-600 font-semibold hover:bg-gradient-to-r from-[#19D3AE] to-[#0FCFEC]">{
                                 loading ? <SmallSpinner></SmallSpinner>
                                     : "Login"
                             }</button>
                         </div>
                         <div>
-                            <p className='text-sm text-center'>New to Doctors Portal? <Link to="/signup" className='text-primary font-semibold'>Create new account</Link></p>
+                            <p className='text-sm text-center'>New to Clean Smile? <Link to="/signup" className='text-primary font-semibold'>Create new account</Link></p>
                         </div>
                         <div>
                             <p className='text-center'>OR</p>
                         </div>
                     </form>
-                    <div className="form-control mt-6">
+                    <div className="form-control">
                         <button
                             onClick={handleGoogleLogin}
-                            className="btn hove:bg-neutral bg-white text-neutral hover:text-slate-300">LOGIN WITH GOOGLE</button>
+                            className="btn btn-outline rounded-sm border hover:border-none hover:text-slate-600 font-semibold hover:bg-gradient-to-r from-[#0FCFEC] to-[#19D3AE]">LOGIN WITH GOOGLE</button>
                     </div>
                 </div>
             </div>

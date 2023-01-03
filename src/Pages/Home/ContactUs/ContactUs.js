@@ -1,14 +1,15 @@
 import React from 'react';
-import appointmentBg from "../../../assets/images/appointment.png";
+import useDynamicTitle from '../../../Hooks/useDynamicTitle';
 
 const ContactUs = () => {
+    useDynamicTitle("Contact-Us")
     const handleContactForm = e => {
         e.preventDefault();
     }
     return (
-        <div className='py-20' style={{ backgroundImage: `url(${appointmentBg})` }}>
+        <div className='py-20 bg-bottom bg-no-repeat' >
             <div className='text-center mb-4'>
-                <p className='text-secondary font-bold'>Contact Us</p>
+                <p className='text-secondary font-bold text-2xl'>Contact Us</p>
                 <h4 className="text-3xl text-white font-semibold">Stay connected with us</h4>
             </div>
             <div>

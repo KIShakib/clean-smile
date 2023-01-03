@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { AuthContext } from '../../Context/AuthContext/AuthProvider';
 import SmallSpinner from '../../Shared/SmallSpinner/SmallSpinner';
 import useToken from '../../Hooks/useToken';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 
 const SignUp = () => {
     const [loading, setLoading] = useState(false)
@@ -12,6 +13,7 @@ const SignUp = () => {
 
     const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
+    useDynamicTitle("Sign-Up")
 
     if (token) {
         navigate("/login");
@@ -90,12 +92,12 @@ const SignUp = () => {
     //             }
     //         })
     // }
-
     return (
         <div className="hero min-h-screen text-neutral">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 rounded">
                 <div
                     className="card-body">
+                        <h2 className='text-center text-2xl font-bold'>Sign Up</h2>
                     <form onSubmit={handleSignUpUser}>
                         <div className="form-control">
                             <label className="label">
@@ -125,7 +127,7 @@ const SignUp = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button type='submit' className="btn btn-neutral">
+                            <button type='submit' className="btn btn-outline rounded-sm border hover:border-none hover:text-slate-600 font-semibold hover:bg-gradient-to-r from-[#0FCFEC] to-[#19D3AE]">
 
                                 {
                                     loading ? <SmallSpinner></SmallSpinner>
@@ -142,7 +144,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     <div className="form-control mt-6">
-                        <button className="btn hove:bg-neutral bg-white text-neutral hover:text-slate-300">LOGIN WITH GOOGLE</button>
+                        <button className="btn btn-outline rounded-sm border hover:border-none hover:text-slate-600 font-semibold hover:bg-gradient-to-r from-[#19D3AE] to-[#0FCFEC]">LOGIN WITH GOOGLE</button>
                     </div>
                 </div>
             </div>

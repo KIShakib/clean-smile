@@ -1,6 +1,6 @@
-# Dentist Portal
+# Clean Smile Dental Care
 
-## Live Site Link : https://doctors-portal-63a0f.web.app/
+## Live Site Link : https://clean-smile-dental-care.web.app/
 
 ### Features
 

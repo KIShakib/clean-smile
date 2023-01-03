@@ -1,10 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 import Spinner from '../../Shared/Spinner/Spinner';
 import SingleUser from '../SingleUser/SingleUser';
 
 const AllUsers = () => {
+    useDynamicTitle("All-User  Admin")
 
     const { data: allUsers = [], isLoading, refetch } = useQuery({
         queryKey: ["allusers"],

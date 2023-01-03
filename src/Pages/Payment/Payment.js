@@ -3,6 +3,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import paymentImage from "../../assets/images/checkout-bg.jpg";
+import useDynamicTitle from '../../Hooks/useDynamicTitle';
 import CheckoutForm from './CheckoutForm';
 
 const stripePromise = loadStripe(process.env.REACT_APP_stripe_pk);
@@ -10,6 +11,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_stripe_pk);
 
 const Payment = () => {
     const bookingInfo = useLoaderData();
+    useDynamicTitle("Payment")
     const { _id, date, email, patientName, phone, price, slot, treatmentName } = bookingInfo;
     return (
         <div className='flex items-center justify-center min-h-screen from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br w-full'>
